@@ -1,0 +1,16 @@
+given = [1,2,3,4,5]
+
+time_of_Roatation = 2
+
+for i in range (0 , time_of_Roatation):
+    temp = given[0]
+#    print (temp) #this is for number for loop rotation
+
+    for j in range(0, len(given)-1):
+   #     print(len(given)-1)
+        given[j] = given[j+1]
+    given[len(given)-1] = temp  # this is to shift left
+
+for i in range(0, len(given)):
+   print(given[i])
+
