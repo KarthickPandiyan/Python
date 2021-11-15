@@ -1,0 +1,38 @@
+Count occurence of element in list
+
+Solution 1:
+
+var a = List(1,2,3,4,5,1,2)
+a
+#res28: List[Int] = List(1, 2, 3, 4, 5, 1, 2)
+
+ a.groupBy(identity)
+#res29: scala.collection.immutable.Map[Int,List[Int]] = Map(5 -> List(5), 1 -> List(1, 1), 2 -> List(2, 2), 3 -> List(3), 4 -> List(4))
+
+ a.groupBy(identity).mapValues(x=>x.length)
+#res30: scala.collection.immutable.Map[Int,Int] = Map(5 -> 1, 1 -> 2, 2 -> 2, 3 -> 1, 4 -> 1)
+
+ a.groupBy(identity).mapValues(x=>x.length).unzip
+#res31: (scala.collection.immutable.Iterable[Int], scala.collection.immutable.Iterable[Int]) = (List(5, 1, 2, 3, 4),List(1, 2, 2, 1, 1))
+
+Solution 2:
+------------
+
+ val mylist = List(4,2,5,6,4,4,2,6,5,6,6,2,5,4,4)
+mylist: List[Int] = List(4, 2, 5, 6, 4, 4, 2, 6, 5, 6, 6, 2, 5, 4, 4)
+
+#Use groupBy { x => x } returns a "Map[Int, List[Int]]"
+step - 2
+ mylist.groupBy(x => (x))
+#res0: scala.collection.immutable.Map[Int,List[Int]] = Map(2 -> List(2, 2, 2), 5 -> List(5, 5, 5), 4 -> List(4, 4, 4, 4, 4), 6 -> List(6, 6, 6, 6))
+
+step - 3
+ mylist.groupBy(x => (x)).map{case(num,times) =>(num,times.size)}.toList
+#res1: List[(Int, Int)] = List((2,3), (5,3), (4,5), (6,4))
+
+step -4 - sort by num
+ mylist.groupBy(x => (x)).map{case(num,times) =>(num,times.size)}.toList.sortBy(_._1)
+#res2: List[(Int, Int)] = List((2,3), (4,5), (5,3), (6,4))
+
+step -5 - unzip to beak into to list it return tuple
+ mylist.groupBy(x => (x)).map{case(num,times) =>(num,times.size)}.toList.sortBy(_._1).unzip res3: (List[Int], List[Int]) = (List(2, 4, 5, 6),List(3, 5, 3, 4))
