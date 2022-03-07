@@ -1,0 +1,4 @@
+About python and uses
+
+https://www.quora.com/What-is-Python-mainly-used-for-in-the-real-world-today-Is-it-beneficial-to-use-Python-for-desktop-apps
+http://www.pythonforbeginners.com/basics/python-quick-guide
