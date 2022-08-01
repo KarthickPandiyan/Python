@@ -1,0 +1,44 @@
+Technical questions asked in my recent interview
+=====================================
+
+◉ SQL
+
+1. A query related to the usage of normal group by like ‘Find the person with the highest salary in each department’.
+
+I have provided a similar problem in the comments, which is taken from Sagar Prajapati's YT channel.
+
+2. The second question is similar to the question Ankit Bansal posted a few days ago here:
+https://lnkd.in/g5ShvPB4
+
+The interviewer gave me similar tables and told me to provide the output for the inner and left join. A video explanation can be found in the comments.
+
+◉ Python
+
+1. Write a program to reverse a string without using the reverse function.
+
+In Python, there is a concept called "slicing." We can use it to reverse any string in a single line.
+Like this, string[::-1]
+
+2. Write a program to reverse a list without using the reverse function.
+
+In the list also, we can use the same slicing method, but at the same time, we also need to prove that we can build the logic as well, so here I used a for loop to solve this problem.
+
+3. Provide an approach for dealing with a problem like this.
+
+[1,2,3,4]
+[3,5,7]
+[8,12]
+[20]
+
+So if you see the first list, the second list is derived like this.
+1+2 = 3
+2+3 = 5
+3+4 = 7
+
+And the series goes on like this till we get a single element in the list.
+
+So here, a possible approach is to use a concept called recursion.
+
+"Recursion is when a function calls itself within its code, thus repeatedly executing the instructions present inside it."
+
+I’ve provided a sample solution to the problem using recursion below.
