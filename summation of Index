@@ -1,0 +1,14 @@
+#Given list of integer
+a = [8,7,6,5,4,3,2,1,9]
+#Target
+b = 10
+#Length will give size in integer
+#to iterate through the length we are using range
+for i in range(len(a)):
+    #print(i) will print the index position of range
+    #Creating one more loop to check within same loop
+    #We want the next value so i+1 (i.e. 0+1, len(a) 8)
+    for j in range(i+1, len(a)): 
+        print("J value " , j)
+        if a[i] + a[j] == b:
+            print("Matching Pari", (a[i] ,a[j]))
