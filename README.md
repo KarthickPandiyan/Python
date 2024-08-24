@@ -1,1 +1,1 @@
-# This Repository gives you complete programing usecase and its solutions
+# This Repository gives you complete python programing usecase and its solutions
