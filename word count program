@@ -1,0 +1,38 @@
+class CountWords:
+
+    def mapper(self):
+        print("Reading the file")
+        path = "D:\\Interview\\Python\\data\\aboutme.txt"
+        file = open(path)
+
+        for lines in file:
+            lines = lines.strip()
+            words = lines.split()
+
+            for word in words:
+                print('%s \t %s'%(word, 1))
+
+    def reducer(self):
+        print("Reading the file")
+        path = "D:\\Interview\\Python\\data\\aboutme.txt"
+        file = open(path)
+
+        old_word = None
+        old_count = 0
+
+        for line in file:
+            line = line.strip()
+            word, count = line.split('\t')
+
+            count = int(count)
+
+            if old_word == word:
+                old_count += count
+            else:
+                if old_word:
+                    print(old_word, old_count)
+                old_word = word
+                old_count += count
+a = CountWords()
+a.mapper()
+a.reducer()
